@@ -88,18 +88,12 @@ public static ArrayList<HashMap<String,String>> findByValue (String searchValue)
     loadData();
 
     ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
-    if (jobs.size() == 0){
-        System.out.println("Sorry no jobs found.");
-    }
+
     for (HashMap<String, String> job : allJobs) {
         for (Map.Entry row : job.entrySet()) {
             String aValue = String.valueOf(row.getValue()).toLowerCase();
             if (aValue.contains(searchValue)) {
-                System.out.println("*****");
                 jobs.add(job);
-                for (Object i : job.keySet()) {
-                    System.out.println(i + ": " + job.get(i));
-                }
             }
         }
     } return jobs;
