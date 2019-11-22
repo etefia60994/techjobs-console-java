@@ -94,6 +94,7 @@ public static ArrayList<HashMap<String,String>> findByValue (String searchValue)
             String aValue = String.valueOf(row.getValue()).toLowerCase();
             if (aValue.contains(searchValue.toLowerCase())) {
                 jobs.add(job);
+                break;
             }
         }
     } return jobs;
